@@ -7,9 +7,11 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import com.example.oblig3.R
+import com.example.oblig3.databinding.FragmentMainPageBinding
 
 
 class UserFragment : Fragment() {
+
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -17,13 +19,10 @@ class UserFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
+        val binding: FragmentMainPageBinding = DataBindingUtil.inflate(inflater, R.layout.fragment_main_page, container, false)
 
 
-        //val binding: UserFragmentBinding = DataBindingUtil.inflate(inflater, R.layout.fragment_user, container, false)
-
-
-
-        return super.onCreateView(inflater, container, savedInstanceState)
+        return binding.root
     }
 }
 
