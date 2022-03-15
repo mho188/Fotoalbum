@@ -3,11 +3,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/navigation"
-    app:startDestination="@id/fragment_main_page">
-
+    app:startDestination="@id/overviewFragment">
     <fragment
-        android:id="@+id/fragment_main_page"
-        android:name="com.example.oblig3.user.UserFragment"
-        android:label="fragment_main_page"
-        tools:layout="@layout/fragment_main_page" />
+        android:id="@+id/overviewFragment"
+        android:name="com.example.oblig3.overview.OverviewFragment"
+        android:label="OverviewFragment"
+        tools:layout="@layout/fragment_overview"/>
 </navigation>
