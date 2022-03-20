@@ -56,6 +56,7 @@ class MainActivity : AppCompatActivity(), UsersAdapter.OnItemClickListener{
     }
 
     override fun onItemClick(position: Int) {
-        Toast.makeText(this, "User ID: $position", Toast.LENGTH_SHORT).show()
+        val userid = position + 1
+        Toast.makeText(this, "User ID: $userid", Toast.LENGTH_SHORT).show()
     }
 }
