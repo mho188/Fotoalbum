@@ -1,12 +1,10 @@
-package com.example.oblig3.network
+package com.example.oblig3
 
 import com.squareup.moshi.Json
-import kotlinx.android.parcel.Parcelize
 
-//@Parcelize
-class UserProperty (
+data class User(
     @Json(name="id")
-    var id: Double,
+    var id: Int,
     @Json(name = "name")
     val name: String,
     @Json(name = "username")
@@ -17,4 +15,8 @@ class UserProperty (
     val phone: String,
     @Json(name="website")
     val website: String){
+}
+
+class CreateUser() {
+
 }

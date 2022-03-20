@@ -8,6 +8,8 @@ import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
 
 class NowApplication: Application() {
+
+    val BASE_URL = "https://jsonplaceholder.typicode.com/"
     lateinit var retrofitService: NowCastApiService
 
     override fun onCreate() {
@@ -15,8 +17,8 @@ class NowApplication: Application() {
         retrofitService = getRetrofitInstanceNewsNowCast()
     }
 
-    private fun getRetrofitInstanceNewsNowCast(): NowCastApiService {
-        val BASE_URL = "https://jsonplaceholder.typicode.com/"
+    fun getRetrofitInstanceNewsNowCast(): NowCastApiService {
+
         val moshi = Moshi.Builder()
             .add(KotlinJsonAdapterFactory())
             .build()
@@ -26,7 +28,6 @@ class NowApplication: Application() {
             .baseUrl(BASE_URL)
             .build()
 
-        val retrofitServiceNowCast = retrofit.create(NowCastApiService::class.java)
-        return retrofitServiceNowCast
+        return retrofit.create(NowCastApiService::class.java)
     }
 }
