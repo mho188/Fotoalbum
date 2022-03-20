@@ -2,6 +2,7 @@ package com.example.oblig3.ui
 
 import android.os.Bundle
 import android.util.Log
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.fragment.NavHostFragment
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -16,7 +17,7 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class MainActivity : AppCompatActivity(){
+class MainActivity : AppCompatActivity(), UsersAdapter.OnItemClickListener{
 
 //    private var layoutManager: RecyclerView.LayoutManager? = null
 //    private var adapter: RecyclerView.Adapter<RecyclerAdapter.ViewHolder>? = null
@@ -31,7 +32,7 @@ class MainActivity : AppCompatActivity(){
         setContentView(R.layout.activity_main)
 
         recyclerView.layoutManager = LinearLayoutManager(this)
-        adapter = UsersAdapter(this, listUsers)
+        adapter = UsersAdapter(this, listUsers, this)
 
         recyclerView.adapter = adapter
 
@@ -52,5 +53,9 @@ class MainActivity : AppCompatActivity(){
                 Log.d("WFA_LOG", message)
             }
         })
+    }
+
+    override fun onItemClick(position: Int) {
+        Toast.makeText(this, "User ID: $position", Toast.LENGTH_SHORT).show()
     }
 }

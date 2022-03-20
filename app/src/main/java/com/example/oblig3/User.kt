@@ -17,6 +17,6 @@ data class User(
     val website: String){
 }
 
-class CreateUser() {
-
-}
+data class UserData(
+    var userID: Int?
+)
