@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/usersFragment">
+
+    <fragment
+        android:id="@+id/usersFragment"
+        android:name="com.example.prosjekt.users.UsersFragment"
+        android:label="Users"
+        tools:layout="@layout/fragment_users">
+        <action
+            android:id="@+id/action_users_to_albums"
+            app:destination="@id/albumsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/albumsFragment"
+        android:name="com.example.prosjekt.albums.AlbumsFragment"
+        android:label="Albums"
+        tools:layout="@layout/fragment_albums">
+        <action
+            android:id="@+id/action_albums_to_images"
+            app:destination="@id/imagesFragment" />
+        <argument
+            android:name="selectedUser"
+            app:argType="com.example.prosjekt.users.User" />
+    </fragment>
+    <fragment
+        android:id="@+id/imagesFragment"
+        android:name="com.example.prosjekt.images.ImagesFragment"
+        android:label="Images">
+        <action
+            android:id="@+id/action_images_to_imageDisplay"
+            app:destination="@id/imageDisplayFragment" />
+        <argument
+            android:name="selectedAlbum"
+            app:argType="com.example.prosjekt.albums.Album" />
+    </fragment>
+    <fragment
+        android:id="@+id/imageDisplayFragment"
+        android:name="com.example.prosjekt.imageDisplay.ImageDisplayFragment"
+        android:label="Image">
+        <argument
+            android:name="selectedImage"
+            app:argType="com.example.prosjekt.images.Image" />
+    </fragment>
+
+</navigation>

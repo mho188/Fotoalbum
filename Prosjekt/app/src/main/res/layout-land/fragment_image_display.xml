@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="imageDisplayViewModel"
+            type="com.example.prosjekt.imageDisplay.ImageDisplayViewModel" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="imageDisplay.ImageDisplayFragment">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="10dp"
+            app:cardBackgroundColor="#81C784"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="4dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/image_url"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:adjustViewBounds="true"
+                    android:scaleType="fitStart"
+                    android:layout_margin="16dp"
+                    tools:srcCompat="@tools:sample/avatars"
+                    app:imageUrl="@{imageDisplayViewModel.selectedImage.url}"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"/>
+
+                <TextView
+                    android:id="@+id/image_display_title"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:text="@{imageDisplayViewModel.selectedImage.title}"
+                    tools:text="assumenda voluptatem\nlaboriosam enim consequatur\nveniam placeat reiciendis error"
+                    android:textAlignment="center"
+                    android:maxWidth="350dp"
+                    android:paddingHorizontal="20dp"
+                    app:layout_constraintBottom_toTopOf="@+id/change_image_display_button"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/image_url"
+                    app:layout_constraintEnd_toEndOf="parent"/>
+
+                <EditText
+                    android:id="@+id/edit_image_display_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:ems="10"
+                    android:inputType="textMultiLine"
+                    android:text="@{imageDisplayViewModel.selectedImage.title}"
+                    android:textAlignment="center"
+                    android:visibility="gone"
+                    android:maxLines="4"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/image_url"
+                    android:maxWidth="350dp"
+                    android:paddingHorizontal="20dp"
+                    app:layout_constraintBottom_toTopOf="@+id/change_image_display_button"
+                    app:layout_constraintEnd_toEndOf="parent"/>
+
+                <Button
+                    android:id="@+id/change_image_display_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="@string/edit_title"
+                    android:layout_marginBottom="30dp"
+                    app:layout_constraintStart_toEndOf="@id/image_url"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toBottomOf="@id/image_url"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

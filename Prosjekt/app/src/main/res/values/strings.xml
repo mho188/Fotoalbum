@@ -1,0 +1,8 @@
+<resources>
+
+    <string name="app_name">Album</string>
+    <string name="delete_image">Delete</string>
+    <string name="edit_title">Edit title</string>
+    <string name="save">Save</string>
+
+</resources>

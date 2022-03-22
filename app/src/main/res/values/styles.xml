@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="ParentTextStyle" parent="@android:style/TextAppearance.Medium">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/green_text</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:lineSpacingExtra">3dp</item>
+        <item name="android:paddingStart">8dp</item>
+        <item name="android:paddingEnd">8dp</item>
+        <item name="android:paddingTop">4dp</item>
+        <item name="android:paddingBottom">8dp</item>
+        <item name="android:textAlignment">center</item>
+    </style>
+
+    <style name="HeadingTextStyle" parent="ParentTextStyle">
+        <item name="android:textSize">23sp</item>
+    </style>
+
+    <style name="TitleTextStyle" parent="ParentTextStyle">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">@color/red_text</item>
+        <item name="android:paddingBottom">0dp</item>
+    </style>
+
+    <style name="BodyTextStyle" parent="ParentTextStyle">
+        <item name="android:textSize">12sp</item>
+        <item name="android:paddingTop">2dp</item>
+        <item name="android:paddingBottom">2dp</item>
+    </style>
+
+    <style name="MainTextStyle" parent="@android:style/TextAppearance.Medium">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/card_bottom</item>
+        <item name="android:fontFamily">@font/molengo</item>
+        <item name="android:textAlignment">center</item>
+    </style>
+
+    <style name="MainHeaderTextStyle" parent="MainTextStyle">
+        <item name="android:textSize">40sp</item>
+        <item name="textAllCaps">true</item>
+    </style>
+
+    <style name="BottomTextStyle" parent="MainTextStyle">
+        <item name="android:textColor">@color/card_bottom_text</item>
+        <item name="android:fontFamily">@font/molengo</item>
+    </style>
+
+    <style name="CardViewStyle">
+        <item name="android:backgroundTint">@color/card_main</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="DividerStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_marginTop">8dp</item>
+        <item name="android:layout_marginBottom">8dp</item>
+        <item name="android:layout_height">1dp</item>
+        <item name="android:background">@android:color/darker_gray</item>
+    </style>
+
+</resources>
